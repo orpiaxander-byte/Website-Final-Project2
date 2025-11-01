@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xander Orpia </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --main: rgb(0, 0, 0);
+            --primary: #087afd;
+            --secondary: #00185b;
+            --dark: #060708;
+            --light: #f8fafc;
+            --accent: #10b981;
+           
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        body {
+            
+            color: var(--dark);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: transparent;
+           
+        }
+        
+        .First {
+            background-color: transparent;
+            background-image: url(programs/black-particles-background.avif);
+        }
+       Section,div,p {
+        color: white;
+       }
+
+       
+
+        section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(programs/Black\ background.jpg);
+          box-shadow: 0px 5px 15px rgba(134, 3, 242, 0.2);
+
+   
+        }
+
+        .active {
+            color: var(--primary) !important;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            color: var(--secondary);
+            text-align: center;
+              
+
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            
+            
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: transparent;
+            transition: width 0.3s ease;
+          
+        } 
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            background-color: #000000;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(59, 130, 246, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+            width: 100%;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(107, 107, 108, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            background-color: #000000;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        .certificate-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .login-form {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+        }
+
+
+        p {
+            color: #e0e0e0;
+        }
+
+
+        footer {
+            background-image: url(programs/black-particles-background.avif);
+        }
+       
+      
+   
+    
+        
+    </style>
+</head>
+<body>
+
+  
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">XANDER ORPIA</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 active">Home</a>
+                    <a href="#about" class="nav-link text-gray-700">About</a>
+                    <a href="#services" class="nav-link text-gray-700">Services</a>
+                    <a href="#Certificate" class="nav-link text-gray-700">Certificate</a>
+                    <a href="#resume" class="nav-link text-gray-700">Resume</a>
+                    <a href="#testimonials" class="nav-link text-gray-700">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-700">Contact</a>
+                    <a href="#login" class="btn btn-primary py-2 px-4">Login</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none"></button>
+                </button>
+            </div>
+        </div>
+    </header>
+
+   
+    <div class="md:hidden fixed top-20 left-0 w-full bg-white shadow-lg z-40 mobile-menu" id="mobile-menu">
+        <div class="flex flex-col space-y-4 p-4">
+            <a href="#home" class="nav-link text-gray-700 active">Home</a>
+            <a href="#about" class="nav-link text-gray-700">About</a>
+            <a href="#services" class="nav-link text-gray-700">Services</a>
+            <a href="#Certificate" class="nav-link text-gray-700">Certificate</a>
+            <a href="#resume" class="nav-link text-gray-700">Resume</a>
+            <a href="#testimonials" class="nav-link text-gray-700">Testimonials</a>
+            <a href="#contact" class="nav-link text-gray-700">Contact</a>
+            <a href="#login" class="btn btn-primary w-full py-2">Login</a>
+        </div>
+    </div>
+   
+    <section id="home" class="First" >
+        <div class="absolute inset-0 overflow-hidden">
+            
+        </div>
+        
+        <div class="container mx-auto px-6 z-10" style="background-color: transparent;">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 animate-fadeIn hero-text">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: #00185b;">Hi, I'm <span class="text-blue-600" >Xander Orpia</span></h1>
+                    <h2 Style="Color: white; font-size: 2rem;">Full Stack Developer & Designer</h2>
+                    <p style="Color: white;">Welcome to my website! I’m Xander Orpia, learning and creating projects in web development and UX/UI design. </p>
+                    <div class="flex flex-wrap gap-4 hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                        <a href="#portfolio" class="btn btn-outline">My Work</a>
+                    </div>
+                    
+                    <div class="flex mt-10 space-x-6">
+                        <a href="https://github.com/orpiaxander-byte">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                       
+                        <a href="https://x.com/OrpiaXander">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/builder4296/">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative">
+                        <img src="programs/GEMINI.jpg" alt="Professional portrait of Xander Orpia, a full stack developer, smiling confidently" 
+                             class="relative rounded-full border-8 border-white shadow-xl w-full max-w-md mx-auto z-10 floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="bg-white">
+        <div class="container mx-auto">
+            <h2 class="section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-1/3 animate-fadeIn">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-blue-200 rounded-lg transform rotate-6"></div>
+                        <img src="programs/468657545_585780200478471_5783504668292434204_n.jpg"  
+                             class="relative rounded-lg shadow-lg w-full z-10">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold ">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">I’m a future Full Stack Developer who loves learning new programming languages through coding and hands-on practice. </p>
+                    
+                    <div>
+                        <div class="card hover:shadow-lg">
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-briefcase mr-2 text-blue-500"></i> Experience
+                            </h4>
+                            <p class="text-gray-600">1+ Years</p>
+                        </div>
+                        <div class="card hover:shadow-lg">
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-blue-500"></i> Completed
+                            </h4>
+                            <p class="text-gray-600">6+ Projects</p>
+                        </div>
+                        <div class="card hover:shadow-lg">
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-users mr-2 text-blue-500"></i> Clients
+                            </h4>
+                            <p class="text-gray-600">3+ Happy Clients</p>
+                        </div>
+                        <div class="card hover:shadow-lg">
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-trophy mr-2 text-blue-500"></i> Awards
+                            </h4>
+                            <p class="text-gray-600"> (67) Awards Won</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-4">My Skills</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>HTML/CSS</span>
+                                    <span>98%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>JavaScript</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>React</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Node.js</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>UI/UX Design</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="services" class="bg-gray-50" style="color: var(--light)">
+        <div class="container-auto">
+            <h2 class="section-title">My Services</h2>
+            <p class="text-center text"></p>
+            
+            <div class="grid grid-cols-1 ">
+                
+                <div class="card animate-fadeIn hover:border-b-4 ">
+                    <div class="text-4xl text-blue-500">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold ">Web Development</h3>
+                    <p class="text">Custom website development with clean Code</p>
+                </div>
+                
+                
+                <div class="card animate-fadeIn  hover:border-b-4 hover:border-blue-500">
+                    <div class="text-4xl mb-4 text-blue-500">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mobile Development</h3>
+                    <p class="text-blue-600">mobile app development with React Native or Flutter for iOS and Android devices.</p>
+                </div>
+                
+                
+                <div class="card animate-fadeIn delay-200 hover:border-b-4 hover:border-blue-500">
+                    <div class="text-4xl text-blue-500">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">UI/UX Design</h3>
+                    <p class="text-gray-600">High PerformanceQuality of Design </p>
+                </div>
+                
+                
+                
+        </div>
+    </section>
+
+    <section id="Certificate" class="bg-white">
+        <div class="container mx-auto">
+            <h2 class="section-title">My Certificate</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">A collection of my certificates and awards from events I’ve joined and accomplishments I’ve earned.  </p>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-blue-500 bg-blue-500 text-white filter-btn active" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-blue-500 text-blue-500 filter-btn" data-filter="Project">
+                        Projects
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-blue-500 text-blue-500 filter-btn" data-filter="Certificate">
+                        Certificates
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-blue-500 text-blue-500 filter-btn" data-filter="design">
+                        Design
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+               
+                <div class="portfolio-item animate-fadeIn" data-category="web">
+                    <img src="programs/Resume.png" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                     
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="portfolio-item animate-fadeIn delay-100" data-category="app">
+                    <img src="programs/Blue and White Elegant Participation Certificate.png" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="btn" style="background: white; color: var(--primary);">View Project</a>
+                            <a href="#" class="btn" style="border: 2px solid white; color: white;">Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+             
+                <div class="portfolio-item animate-fadeIn delay-200" data-category="web">
+                    <img src="programs/LABexam (1).png"  class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="btn" style="background: white; color: var(--primary);">View Project</a>
+                            <a href="#" class="btn" style="border: 2px solid white; color: white;">Details</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="portfolio-item animate-fadeIn" data-category="design">
+                    <img src="programs/Class Sched.png"  class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="btn" style="background: white; color: var(--primary);">View Project</a>
+                            <a href="#" class="btn" style="border: 2px solid white; color: white;">Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+           
+                <div class="portfolio-item animate-fadeIn delay-100" data-category="web">
+                    <img src="programs/LABexam.png"  class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="btn" style="background: white; color: var(--primary);">View Project</a>
+                            <a href="#" class="btn" style="border: 2px solid white; color: white;">Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+             
+                <div class="portfolio-item animate-fadeIn delay-200" data-category="app">
+                    <img src="programs/Purple, White, and Orange Geometric Certificate of Recognition Certificate.png"  class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Certificate</h3>
+                        <p class="text-white mb-4"></p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="btn" style="background: white; color: var(--primary);">View Project</a>
+                            <a href="#" class="btn" style="border: 2px solid white; color: white;">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+    </section>
+
+    <section id="resume" class="bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title">My Resume</h2>
+            <p style="color:rgba(48, 52, 56, 0.214); text-align: center;">My professional journey and educational background.</p>
+            
+            <div class="timeline">
+                
+                <h3 class="text-2xl font-semibold mb-8 text-center">Work Experience</h3>
+                
+               
+                <div class="container left animate-fadeIn">
+                    <div class="content">
+                        <h4 class="font-bold text-lg mb-1">Senior Full Stack Developer</h4>
+                        <div class="text-blue-500 mb-2">in LVCC University | 2020 - Present</div>
+                        <p class="text-gray-600">Worked with a team to build and maintain web applications while learning modern JavaScript frameworks.</p>
+                    </div>
+                </div>
+                
+           
+                <div class="container right animate-fadeIn delay-100">
+                    <div class="content">
+                        <h4 class="font-bold text-lg mb-1">Web Developer</h4>
+                        <div class="text-blue-500 mb-2">Digital Creations in LVCC University | 2017 - 2020</div>
+                        <p class="text-gray-600">Helped develop and maintain websites for clients, focusing on speed and mobile responsiveness.</p>
+                    </div>
+                </div>
+                
+            
+                <div class="container left animate-fadeIn delay-200">
+                    <div class="content">
+                        <h4 class="font-bold text-lg mb-1">Junior Developer</h4>
+                        <div class="text-blue-500 mb-2">LVCC  | 2015 - 2017</div>
+                        <p class="text-gray-600">Helped develop and test web applications by fixing bugs and adding new features during the learning process.</p>
+                    </div>
+                </div>
+                
+             
+                <h3 class="text-2xl font-semibold mb-8 mt-16 text-center">Education</h3>
+                
+               
+                <div class="container right animate-fadeIn">
+                    <div class="content">
+                        <h4 class="font-bold text-lg mb-1">Master of Computer Science</h4>
+                        <div class="text-blue-500 mb-2">LVCC | 2009-2011</div>
+                        <p class="text-gray-600">Studied Human-Computer Interaction and Web Technologies, learning how people interact with websites and applications.</p>
+                    </div>
+                </div>
+              
+                <div class="container left animate-fadeIn delay-100">
+                    <div class="content">
+                        <h4 class="font-bold text-lg mb-1">Bachelor of Computer Engineering</h4>
+                        <div class="text-blue-500 mb-2">2021-2025</div>
+                        <p class="text-gray-600">Earned a Bachelor of Science in Computer Engineering with honors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="testimonials" class="bg-white py-16">
+        <div class="container mx-auto">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">What my co-workers say about my work and teamwork skills.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                <div class="testimonial-card animate-fadeIn">
+                    <div class="flex items-center mb-4">
+                        <img src="programs/Kurt.png" class="rounded-full w-12 h-12 object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Kurt Cypress</h4>
+                            <p class="text-gray-500 text-sm">Co-Worker</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">“Working with Xander was great! He finished our projects smoothly and without any problems.”</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                
+                <div class="testimonial-card animate-fadeIn delay-100">
+                    <div class="flex items-center mb-4">
+                        <img src="programs/Elliot.png" alt="Michael Chen, Founder of StartupX, professional portrait" class="rounded-full w-12 h-12 object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Elliot Alexander</h4>
+                            <p class="text-gray-500 text-sm">Co-Worker</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">“Xander helped turn our ideas into real projects. He made everything easier for us and always worked with faith and determination.”</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                
+                <div class="testimonial-card animate-fadeIn delay-200">
+                    <div class="flex items-center mb-4">
+                        <img src="programs/Abdon.png"  class="rounded-full w-12 h-12 object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">  Clark Abdon</h4>
+                            <p class="text-gray-500 text-sm">Co-Worker</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">working with Xander Is Light Why? Working with full stcak developer is heaven because you can ask that you knwo he can do it in just a minutes</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="contact" class="bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Got a project idea or want to work together? I’d be happy to hear from you!</p>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="w-full lg:w-1/2 animate-fadeIn">
+                    <div class="card p-6 h-full">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-600">San Nicholas 3 </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">@orpiaxander</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+63 9265696548</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Social Media</h4>
+                                    <div class="flex space-x-4 mt-2">
+                                        </a>
+                                        <a href="https://www.facebook.com/" >
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                        <a href="https://x.com/blue_choke52100">
+                                            <i class="fab fa-twitter fa-lg"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/builder4296/" >
+                                            <i class="fab fa-instagram fa-lg"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 animate-fadeIn delay-100">
+                    <form class="card p-6 h-full">
+                        <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="name" class="block mb-2 font-medium">Your Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Name ">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="block mb-2 font-medium">Your Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Project You want to Make">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5" class="form-control" placeholder="HI, I have  A Word"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full mt-4">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="login" class="bg-white py-20" style="background-image: url(programs/plain.png); background-repeat: no-repeat; background-size: cover;">
+        <div class="container mx-auto" >
+            <h2 class="section-title">Client Login</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Access your project dashboard and collaborate with me.</p>
+            
+            <div class="flex justify-center" >
+                <div class="login-form animate-fadeIn" style="box-shadow: rgba(66, 3, 214, 0.834) 0px 22px 70px 4px;">
+                    <h3 class="text-2xl font-semibold mb-6 text-center" Style="Color: #000000; "> Sign In</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="login-email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="Your Email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" class="block mb-2 font-medium">Password</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Your Password" required>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="remember" class="mr-2">
+                                <label for="remember" class="text-sm text-gray-600">Remember me</label>
+                            </div>
+                            <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full mb-4">Login</button>
+                        
+                        <p class="text-center text-gray-600">
+                            Don't have an account? <a href="#" class="text-blue-500 hover:underline">Contact me</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    
+
+ 
+    <a href="#home" id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+       
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+ 
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('shadow-lg', window.scrollY > 10);
+            
+       
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+         
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+      
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+             
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-500', 'text-white');
+                    btn.classList.add('text-blue-500');
+                });
+                
+             
+                this.classList.add('active', 'bg-blue-500', 'text-white');
+                this.classList.remove('text-blue-500');
+                
+             
+                const filter = this.dataset.filter;
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+       
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+            
+                let isValid = true;
+                const inputs = this.querySelectorAll('input[required], textarea[required]');
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                }
+            });
+        });
+
+        
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fadeIn, .delay-100, .delay-200, .delay-300, .delay-400');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+
+              
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 1s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        
+        document.querySelectorAll('.about-text, .service-card, .certificate-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+       
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+
+       
+        const heroTitle = document.querySelector('.hero-title');
+        const originalText = heroTitle.textContent;
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < originalText.length) {
+                heroTitle.textContent = originalText.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            heroTitle.textContent = '';
+            setTimeout(typeWriter, 1000);
+        });
+
+
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+
+            if (isValid) {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }
+        });
+        
+    </script>
+</body>
+</html>
